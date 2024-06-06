@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 107.25 43.74">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ad9282;
+        stroke: #010101;
+        stroke-miterlimit: 10;
+        stroke-width: 4.6px;
+      }
+    </style>
+  </defs>
+  <path class="cls-1" d="m5.49,22.35C-3.41,14.45,8.09-1.55,18.59,3.15c12.99,9.4,0,28.41-13.1,19.2Z"/>
+  <line class="cls-1" x1="23.19" y1="16.37" x2="106.58" y2="41.54"/>
+  	<animateTransform
+      attributeName="transform"
+      attributeType="XML"
+      type="translate"
+      values= "0,0; 4,5; 0"
+      dur="8s"
+      repeatCount="indefinite"/>
+</svg>

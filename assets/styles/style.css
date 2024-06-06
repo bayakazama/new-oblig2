@@ -1,0 +1,387 @@
+@font-face {
+  font-family: "Marydale-bold";
+  src: url("./fonts/Marydale Bold.ttf") format("truetype"), url("./fonts/Marydale Bold.woff") format("woff");
+}
+@font-face {
+  font-family: "Marydale-regular";
+  src: url("./fonts/Marydale Regular.ttf") format("truetype"), url("./fonts/Marydale Regular.woff") format("woff");
+}
+@font-face {
+  font-family: "Open-sans";
+  src: url("./fonts/Open Sans Bold.ttf") format("truetype"), url("./fonts/Open Sans Bold.woff") format("woff");
+}
+@keyframes backAndForth-left {
+  0%, 100% {
+    transform: translate(-15%, 0px);
+  }
+  50% {
+    transform: translate(-50%, 0px);
+  }
+}
+@keyframes backAndForth-right {
+  0%, 100% {
+    transform: translate(-20%, 0px);
+  }
+  50% {
+    transform: translate(-67%, 0px);
+  }
+}
+@keyframes rotate-then-back {
+  0%, 100% {
+    transform: rotate(-30deg);
+  }
+  50% {
+    transform: rotate(30deg);
+  }
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-50%);
+  }
+}
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 2vw;
+}
+
+body {
+  margin: 20vw 0;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+#poster {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  height: 113.28vw;
+  width: 80vw;
+  background-color: rgba(199, 113, 97, 0.36);
+  border: 2px solid black;
+}
+
+.header--white-wave,
+.cont--blue-wave,
+.cont--lightblue-wave,
+.cont--lightred-wave {
+  position: relative;
+  width: 100%;
+}
+
+.header--white-wave {
+  z-index: 5;
+  height: auto;
+}
+.header--white-wave__item {
+  position: absolute;
+  top: 0;
+  z-index: 6;
+  padding: 5% 0 0 5%;
+}
+.header--white-wave__title {
+  margin: 0;
+  font-family: "Open-sans";
+  font-size: 1.5rem;
+  color: #005BA7;
+}
+.header--white-wave__title--green {
+  color: #0FA15C;
+}
+.header--white-wave__subtitle {
+  font-family: "Marydale-regular";
+  font-size: 0.8rem;
+  line-height: 1.3;
+}
+
+.white-wave__img {
+  position: absolute;
+  top: 0;
+}
+
+.cont--blue-wave {
+  position: absolute;
+  top: 9vw;
+  z-index: 4;
+  width: 100%;
+}
+.cont--blue-wave__img, .cont--blue-wave__text, .cont--blue-wave__figure {
+  position: absolute;
+}
+.cont--blue-wave__text {
+  font-family: "Marydale-bold";
+  font-size: 0.9rem;
+  line-height: 1.1;
+  color: white;
+  top: 14.5vw;
+  z-index: 5;
+  padding-left: 5%;
+}
+.cont--blue-wave__figure {
+  top: 6vw;
+  right: 10vw;
+}
+
+.moon {
+  width: 18vw;
+  animation: rotate-then-back 6s ease-in-out infinite;
+}
+
+.bigstar, .star {
+  position: absolute;
+}
+
+.bigstar {
+  top: -3vw;
+  right: -5vw;
+  width: 6.5vw;
+  animation: spin 6s infinite;
+}
+
+.star {
+  top: 5vw;
+  width: 5vw;
+  right: -8vw;
+  animation: spin 4s linear infinite;
+}
+
+.cont--lightblue-wave {
+  position: absolute;
+  top: 23%;
+}
+.cont--lightblue-wave__icon--car {
+  position: absolute;
+  top: -25vw;
+  width: 79vw;
+  z-index: 8;
+}
+
+.cont--lightred-wave {
+  height: 500px;
+}
+.cont--lightred-wave__img {
+  z-index: 2;
+}
+.cont--lightred-wave__item {
+  z-index: 4;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 34vw;
+  width: 100%;
+}
+.cont--lightred-wave__icon--kids {
+  width: 55vw;
+  z-index: 5;
+}
+.cont--lightred-wave__icon--arm {
+  position: absolute;
+  width: 6vw;
+  bottom: 13.1vw;
+  left: 8.8vw;
+  z-index: 3;
+}
+
+.greenguy {
+  position: absolute;
+}
+.greenguy--group {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 100;
+}
+.greenguy--small {
+  width: 3vw;
+  animation: bounce 4s linear infinite;
+}
+.greenguy--medium {
+  width: 3vw;
+  animation: bounce 2s linear infinite;
+}
+.greenguy--large {
+  width: 6vw;
+  animation: bounce 3s linear infinite;
+}
+
+.greenguy:hover {
+  animation: spin 0.5s linear infinite;
+}
+
+#gg-1 {
+  bottom: 56vw;
+  left: 8vw;
+}
+
+#gg-2 {
+  bottom: 64vw;
+  left: 22vw;
+}
+
+#gg-3 {
+  bottom: 68vw;
+  right: 17vw;
+}
+
+#gg-4 {
+  bottom: 60vw;
+  right: 28vw;
+}
+
+#gg-5 {
+  top: -15vw;
+  right: 10vw;
+}
+
+#gg-6 {
+  bottom: 53vw;
+  left: 26vw;
+}
+
+.cont--earth {
+  position: absolute;
+  bottom: 7vw;
+  width: 100%;
+  z-index: 2;
+}
+.cont--earth__img {
+  width: 100%;
+}
+.cont--earth__title {
+  font-family: "Marydale-bold";
+  z-index: 10;
+  position: absolute;
+  top: 45%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  text-align: center;
+  font-size: 2.3rem;
+}
+
+.cont--eyes {
+  position: absolute;
+  z-index: 10;
+  bottom: 7vw;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 60%;
+  z-index: 3;
+}
+
+.cont--left {
+  display: flex;
+}
+.cont--left--eye {
+  left: 2vw;
+  position: relative;
+  width: 10vw;
+}
+.cont--left--eyeball {
+  top: 10%;
+  position: absolute;
+  left: 7vw;
+  width: 6vw;
+  height: 6vw;
+  background-color: white;
+  animation: backAndForth-left 8s infinite;
+  border-radius: 81% 59% 35% 100%/36% 89% 53% 95%;
+}
+
+.cont--right {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  width: 10vw;
+  left: 10px;
+}
+.cont--right--eye {
+  position: relative;
+  width: 10vw;
+  right: 2vw;
+}
+.cont--right--eyeball {
+  top: 10%;
+  position: absolute;
+  right: 1vw;
+  width: 5vw;
+  height: 7.5vw;
+  animation: backAndForth-right 8s infinite;
+  border-radius: 37% 58% 47% 47%/35% 40% 46% 65%;
+  background-color: white;
+}
+
+.qr-code {
+  z-index: 10;
+  width: 8vw;
+  position: absolute;
+  bottom: 10vw;
+  left: 1vw;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  z-index: 5;
+  width: 100%;
+  font-size: 0.5rem;
+}
+.footer__img {
+  width: 25vw;
+}
+.footer__link {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.footer--white {
+  background-color: white;
+  padding: 0;
+  height: 3vw;
+}
+.footer--white__text {
+  text-align: left;
+  font-family: "Marydale-bold";
+  width: 100%;
+  font-size: 0.4rem;
+  text-align: center;
+  padding: 0 2%;
+}
+
+.footer--blue {
+  background-color: #005BA7;
+  display: flex;
+  align-items: center;
+  height: 6vw;
+  justify-content: space-evenly;
+}
+.footer--blue__img {
+  width: 22vw;
+}
+.footer--blue__item--divider {
+  z-index: 5;
+}
+.footer--blue__link {
+  color: white;
+  font-family: "Marydale-bold";
+  text-decoration: none;
+}/*# sourceMappingURL=style.css.map */

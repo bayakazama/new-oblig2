@@ -1,0 +1,461 @@
+// Fonts
+@font-face {
+  font-family: 'Marydale-bold';
+  src: url('./fonts/Marydale\ Bold.ttf') format('truetype'),
+  url('./fonts/Marydale\ Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Marydale-regular';
+  src: url('./fonts/Marydale\ Regular.ttf') format('truetype'),
+  url('./fonts/Marydale\ Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Open-sans';
+  src: url('./fonts/Open\ Sans\ Bold.ttf') format('truetype'),
+  url('./fonts/Open\ Sans\ Bold.woff') format('woff');
+}
+
+// Animations
+
+@keyframes backAndForth-left {
+  0%, 100% {
+    transform: translate(-15%, 0px);
+  }
+  50% {
+    transform: translate(-50%, 0px);
+  }
+}
+
+@keyframes backAndForth-right {
+  0%, 100% {
+    transform: translate(-20%, 0px);
+  }
+  50% {
+    transform: translate(-67%, 0px);
+  }
+}
+
+@keyframes rotate-then-back {
+  0%, 100% {transform: rotate(-30deg);}
+  50% {transform: rotate(30deg);}
+}
+
+@keyframes spin {
+  from {transform:rotate(0deg);}
+  to {transform:rotate(360deg);}
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-50%); }
+}
+
+// Colors 
+$ntnublue: #005BA7;
+$miljogreen: #0FA15C;
+$lightred: rgb(199, 113, 97, 36%);
+
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 2vw;
+}
+
+body {
+  margin: 20vw 0;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+#poster {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  height:  80vw * 1.416; // aspect ratio of height/width of original poster
+  width: 80vw;
+  background-color: $lightred;
+  border: 2px solid black;
+}
+// End of Body and poster
+
+// Waves
+.header--white-wave,
+.cont--blue-wave,
+.cont--lightblue-wave,
+.cont--lightred-wave {
+  position: relative;
+  width: 100%;
+}
+
+// White wave
+.header--white-wave {
+  z-index: 5;
+  height: auto;
+
+&__item {
+  position: absolute;
+  top: 0;
+  z-index: 6;
+  padding: 5% 0 0 5%;
+}
+
+&__title {
+  margin: 0;
+    font-family: 'Open-sans';
+    font-size: 1.5rem;
+    color: $ntnublue;
+
+    &--green {
+        color: $miljogreen;
+    }
+  }
+
+  &__subtitle {
+    font-family: 'Marydale-regular';
+    font-size: 0.8rem;
+    line-height: 1.3;
+  }
+}
+
+.white-wave__img {
+  position: absolute;
+  top: 0;
+}
+// End of white wave
+
+// Blue wave
+.cont--blue-wave {
+  position: absolute;
+  top: 9vw;
+  z-index: 4;
+  width: 100%;
+
+&__img, &__text, &__figure {
+  position: absolute;
+}
+
+&__text {
+  font-family: "Marydale-bold";
+  font-size: 0.9rem;
+  line-height: 1.1;
+  color: white;
+  top: 14.5vw;
+  z-index: 5;
+  padding-left: 5%;
+}
+
+&__figure {
+  top: 6vw;
+  right: 10vw;
+}
+}
+
+// Moon and stars
+.moon {
+  width: 18vw;
+  animation: rotate-then-back 6s ease-in-out infinite;
+}
+
+.bigstar, .star {
+  position: absolute;
+}
+
+.bigstar {
+  top: -3vw;
+  right: -5vw;
+  width: 6.5vw;
+  animation: spin 6s infinite;
+}
+
+.star {
+  top: 5vw;
+  width: 5vw;
+  right: -8vw;
+  animation: spin 4s linear infinite;
+}
+// End of moon and stars
+// End of Blue wave
+
+
+// Lightblue wave
+.cont--lightblue-wave {
+position: absolute;
+top: 23%;
+// Car svg
+&__icon--car {
+  position: absolute;
+  top: -25vw;
+  width: 79vw;
+  z-index: 8;
+}
+}
+// End of car
+// End of Lightblue wave
+
+
+// Lightred "wave"
+.cont--lightred-wave {
+  height: 500px;
+
+&__img {
+  z-index: 2;
+}
+
+//kids svg
+&__item {
+  z-index: 4;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 34vw;
+  width: 100%;
+  }
+
+  &__icon--kids {
+    width: 55vw;
+    z-index: 5;
+  }
+
+  &__icon--arm {
+    position: absolute;
+    width: 6vw;
+    bottom: 13.1vw;
+    left: 8.8vw;
+    z-index: 3;
+  } 
+}
+// End of kids svg
+
+// GreenGuys
+.greenguy {
+  position: absolute;
+
+&--group {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 100;
+}
+
+&--small {
+  width: 3vw;
+  animation: bounce 4s linear infinite;
+}
+
+&--medium {
+  width: 3vw;
+  animation: bounce 2s linear infinite;
+}
+
+&--large {
+  width: 6vw;
+  animation: bounce 3s linear infinite;
+}
+}
+
+.greenguy:hover{
+  animation: spin 0.5s linear infinite;
+}
+
+#gg-1 {
+  bottom: 56vw;
+  left: 8vw;
+}
+
+#gg-2 {
+  bottom: 64vw;
+  left: 22vw;
+}
+
+#gg-3 {
+  bottom: 68vw;
+  right: 17vw;
+}
+
+#gg-4 {
+  bottom: 60vw;
+  right: 28vw;
+}
+
+#gg-5 {
+  top: -15vw;
+  right: 10vw;
+}
+
+#gg-6 {
+  bottom: 53vw;
+  left: 26vw;
+}
+// End of GreenGuy (rip the hulk)
+
+// Earth, bottom is from the footer bottom
+.cont--earth {
+  position: absolute;
+  bottom: 7vw; 
+  width: 100%;
+  z-index: 2;
+
+&__img{
+  width: 100%;
+}
+
+&__title{
+  font-family: 'Marydale-bold';
+  z-index: 10;
+  position: absolute;
+  top: 45%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  text-align: center;
+  font-size: 2.3rem;
+}
+}
+// End of Earth (WHAT?!)
+
+// Eyes
+.cont--eyes{
+  position: absolute;
+  z-index: 10;
+  bottom: 7vw;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 60%;
+  z-index: 3;
+}
+
+// Left eye
+.cont--left{
+  display: flex;
+
+&--eye{
+  left: 2vw;
+  position: relative;
+  width: 10vw;
+}
+
+&--eyeball{
+  top: 10%;
+  position: absolute;
+  left: 7vw;
+  width: 6vw;
+  height: 6vw;
+  background-color: white;
+  animation: backAndForth-left 8s infinite;
+  border-radius: 81% 59% 35% 100% / 36% 89% 53% 95% 
+}
+}
+
+// Right eye
+.cont--right {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  width: 10vw;
+  left: 10px;
+
+
+&--eye{
+  position: relative;
+  width: 10vw;
+  right: 2vw;
+
+}
+
+&--eyeball{
+  top: 10%;
+  position: absolute;
+  right: 1vw;
+  width: 5vw;
+  height: 7.5vw;
+  animation: backAndForth-right 8s infinite;
+  border-radius: 37% 58% 47% 47% / 35% 40% 46% 65%;
+  background-color: white;
+}
+}
+// End of Eyes
+
+// Qr-code
+.qr-code {
+  z-index: 10;
+  width: 8vw;
+  position: absolute;
+  bottom: 10vw;
+  left: 1vw;
+}
+// End of qr-code
+// End of Lightred "wave"
+
+// Footer
+.footer {
+  position: absolute;
+  bottom: 0;
+  z-index: 5;
+  width: 100%;
+  font-size: 0.5rem;
+
+&__img {
+  width: 25vw;
+}
+
+&__link {
+  display: flex;
+  justify-content: flex-end;
+}
+}
+
+// White Footer
+.footer--white {
+  background-color: white;
+  padding: 0;
+  height: 3vw;
+
+&__text {
+  text-align: left;
+  font-family: "Marydale-bold";
+  width: 100%;
+  font-size: 0.4rem;
+  text-align: center;
+  padding: 0 2%;
+}
+}
+// End of White Footer
+
+// Blue Footer
+.footer--blue {
+  background-color: $ntnublue;
+  display: flex;
+  align-items: center;
+  height: 6vw;
+  justify-content: space-evenly;
+
+&__img {
+  width: 22vw;
+}
+
+&__item {
+  &--divider {
+    z-index: 5;
+  }
+}
+
+&__link {
+  color: white;
+  font-family: 'Marydale-bold';
+  text-decoration: none;
+}
+}
+
+// End of Blue Footer
+// End of Footer
